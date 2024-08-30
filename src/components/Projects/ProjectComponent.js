@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import ProjectTech from './ProjectTech'
 import {motion} from "framer-motion"
 import { LuExternalLink } from "react-icons/lu";
+import { FaGreaterThan } from "react-icons/fa";
 function ProjectComponent({imageUrl,about}) {
   const clickHandler=()=>{
     const a=document.createElement("a");
@@ -21,12 +22,19 @@ function ProjectComponent({imageUrl,about}) {
            </motion.div>
            <motion.div initial={{x:100,opacity:0}} whileInView={{x:0,opacity:1,transition:{duration:0.5}}} viewport={{once:true,amount:0.7}} className='flex-1  px-20  gap-3 flex flex-col w-full md:w-1/2'>
               <h1 className='text-2xl cursor-pointer ' style={{color:"rgb(167 139 250)"}} onClick={clickHandler}>{about.name}</h1>
-              <p className='text-sm opacity-50' >{about.info}</p>
-              <div className='flex'>
+              <p className='text-sm opacity-50 text-justify' >{about.info}</p>
+              <div className='flex  overflow-x-auto'>
                 {about.tech.map((a)=>(
                   <ProjectTech text={a}/>
+                  
                 ))}
+                
+                
+
               </div>
+              
+              
+              
            </motion.div>
     </div>
   )
