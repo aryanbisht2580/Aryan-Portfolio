@@ -1,0 +1,8 @@
+.movein{
+    transform: translateY(-100%);
+    transition: ease-in-out 1s;
+}
+.moveout{
+    transform: translateY(0);
+    transition: ease-in-out 1s;
+}
